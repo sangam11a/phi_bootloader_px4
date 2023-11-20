@@ -12,7 +12,7 @@ on:
 jobs:
   coverage:
     name: Build
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
         with:
@@ -25,6 +25,6 @@ jobs:
             tar -jxf gcc-arm-none-eabi-9-2020-q2-update-x86_64-linux.tar.bz2
             echo "$(pwd)/gcc-arm-none-eabi-9-2020-q2-update/bin" >> $GITHUB_PATH
       - name: Build
-        run: make
+        run: make phi_bl
       - name: Check style
         run: make check_format
