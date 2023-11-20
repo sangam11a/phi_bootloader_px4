@@ -425,7 +425,7 @@ sys_tick_handler(void)
 		}
 
 	if ((_led_state == LED_BLINK) && (timer[TIMER_LED] == 0)) {
-		led_toggle(LED_BOOTLOADER);
+		//led_toggle(LED_BOOTLOADER);
 		timer[TIMER_LED] = 50;
 	}
 }
@@ -439,26 +439,26 @@ delay(unsigned msec)
 		;
 }
 
-static void
-led_set(enum led_state state)
-{
-	_led_state = state;
+// static void
+// led_set(enum led_state state)
+// {
+// 	_led_state = state;
 
-	switch (state) {
-	case LED_OFF:
-		led_off(LED_BOOTLOADER);
-		break;
+// 	switch (state) {
+// 	case LED_OFF:
+// 		led_off(LED_BOOTLOADER);
+// 		break;
 
-	case LED_ON:
-		led_on(LED_BOOTLOADER);
-		break;
+// 	case LED_ON:
+// 		//led_on(LED_BOOTLOADER);
+// 		break;
 
-	case LED_BLINK:
-		/* restart the blink state machine ASAP */
-		timer[TIMER_LED] = 0;
-		break;
-	}
-}
+// 	case LED_BLINK:
+// 		/* restart the blink state machine ASAP */
+// 		timer[TIMER_LED] = 0;
+// 		break;
+// 	}
+// }
 
 static void
 sync_response(void)
@@ -617,7 +617,7 @@ bootloader(unsigned timeout)
 	}
 
 	/* make the LED blink while we are idle */
-	led_set(LED_BLINK);
+	// led_set(LED_BLINK);
 
 	while (true) {
 		volatile int c;
@@ -628,7 +628,7 @@ bootloader(unsigned timeout)
 		} flash_buffer;
 
 		// Wait for a command byte
-		led_off(LED_ACTIVITY);
+		//led_off(LED_ACTIVITY);
 
 		do {
 			/* if we have a timeout and the timer has expired, return now */
@@ -641,7 +641,7 @@ bootloader(unsigned timeout)
 
 		} while (c < 0);
 
-		led_on(LED_ACTIVITY);
+		//led_on(LED_ACTIVITY);
 
 		// handle the command byte
 		switch (c) {
@@ -743,7 +743,7 @@ bootloader(unsigned timeout)
 
 			// clear the bootloader LED while erasing - it stops blinking at random
 			// and that's confusing
-			led_set(LED_ON);
+			// led_set(LED_ON);
 
 			// erase all sectors
 			arch_flash_unlock();
@@ -753,7 +753,7 @@ bootloader(unsigned timeout)
 			}
 
 			// disable the LED while verifying the erase
-			led_set(LED_OFF);
+			// led_set(LED_OFF);
 
 			// verify the erase
 			for (address = 0; address < board_info.fw_size; address += 4)
@@ -765,7 +765,7 @@ bootloader(unsigned timeout)
 			SET_BL_STATE(STATE_PROTO_CHIP_ERASE);
 
 			// resume blinking
-			led_set(LED_BLINK);
+			// led_set(LED_BLINK);
 			break;
 
 		// program bytes at current address
