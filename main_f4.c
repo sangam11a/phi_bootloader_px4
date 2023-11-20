@@ -409,20 +409,20 @@ board_init(void)
 #endif
 
 	/* initialise LEDs */
-	rcc_peripheral_enable_clock(&RCC_AHB1ENR, BOARD_CLOCK_LEDS);
-	gpio_mode_setup(
-		BOARD_PORT_LEDS,
-		GPIO_MODE_OUTPUT,
-		GPIO_PUPD_NONE,
-		BOARD_PIN_LED_BOOTLOADER | BOARD_PIN_LED_ACTIVITY);
-	gpio_set_output_options(
-		BOARD_PORT_LEDS,
-		GPIO_OTYPE_PP,
-		GPIO_OSPEED_2MHZ,
-		BOARD_PIN_LED_BOOTLOADER | BOARD_PIN_LED_ACTIVITY);
-	BOARD_LED_ON(
-		BOARD_PORT_LEDS,
-		BOARD_PIN_LED_BOOTLOADER | BOARD_PIN_LED_ACTIVITY);
+	// rcc_peripheral_enable_clock(&RCC_AHB1ENR, BOARD_CLOCK_LEDS);
+	// gpio_mode_setup(
+	// 	BOARD_PORT_LEDS,
+	// 	GPIO_MODE_OUTPUT,
+	// 	GPIO_PUPD_NONE,
+	// 	BOARD_PIN_LED_BOOTLOADER | BOARD_PIN_LED_ACTIVITY);
+	// gpio_set_output_options(
+	// 	BOARD_PORT_LEDS,
+	// 	GPIO_OTYPE_PP,
+	// 	GPIO_OSPEED_2MHZ,
+	// 	BOARD_PIN_LED_BOOTLOADER | BOARD_PIN_LED_ACTIVITY);
+	// BOARD_LED_ON(
+	// 	BOARD_PORT_LEDS,
+	// 	BOARD_PIN_LED_BOOTLOADER | BOARD_PIN_LED_ACTIVITY);
 
 	/* enable the power controller clock */
 	rcc_peripheral_enable_clock(&RCC_APB1ENR, RCC_APB1ENR_PWREN);
@@ -461,11 +461,11 @@ board_deinit(void)
 #endif
 
 	/* deinitialise LEDs */
-	gpio_mode_setup(
-		BOARD_PORT_LEDS,
-		GPIO_MODE_INPUT,
-		GPIO_PUPD_NONE,
-		BOARD_PIN_LED_BOOTLOADER | BOARD_PIN_LED_ACTIVITY);
+	// gpio_mode_setup(
+	// 	BOARD_PORT_LEDS,
+	// 	GPIO_MODE_INPUT,
+	// 	GPIO_PUPD_NONE,
+	// 	BOARD_PIN_LED_BOOTLOADER | BOARD_PIN_LED_ACTIVITY);
 
 	/* disable the power controller clock */
 	rcc_peripheral_disable_clock(&RCC_APB1ENR, RCC_APB1ENR_PWREN);
@@ -695,47 +695,47 @@ flash_func_read_sn(uint32_t address)
 	return *(uint32_t *)(address + UDID_START);
 }
 
-void
-led_on(unsigned led)
-{
-	switch (led) {
-	case LED_ACTIVITY:
-		BOARD_LED_ON(BOARD_PORT_LEDS, BOARD_PIN_LED_ACTIVITY);
-		break;
+// void
+// led_on(unsigned led)
+// {
+// 	switch (led) {
+// 	case LED_ACTIVITY:
+// 		BOARD_LED_ON(BOARD_PORT_LEDS, BOARD_PIN_LED_ACTIVITY);
+// 		break;
 
-	case LED_BOOTLOADER:
-		BOARD_LED_ON(BOARD_PORT_LEDS, BOARD_PIN_LED_BOOTLOADER);
-		break;
-	}
-}
+// 	case LED_BOOTLOADER:
+// 		BOARD_LED_ON(BOARD_PORT_LEDS, BOARD_PIN_LED_BOOTLOADER);
+// 		break;
+// 	}
+// }
 
-void
-led_off(unsigned led)
-{
-	switch (led) {
-	case LED_ACTIVITY:
-		BOARD_LED_OFF(BOARD_PORT_LEDS, BOARD_PIN_LED_ACTIVITY);
-		break;
+// void
+// led_off(unsigned led)
+// {
+// 	switch (led) {
+// 	case LED_ACTIVITY:
+// 		BOARD_LED_OFF(BOARD_PORT_LEDS, BOARD_PIN_LED_ACTIVITY);
+// 		break;
 
-	case LED_BOOTLOADER:
-		BOARD_LED_OFF(BOARD_PORT_LEDS, BOARD_PIN_LED_BOOTLOADER);
-		break;
-	}
-}
+// 	case LED_BOOTLOADER:
+// 		BOARD_LED_OFF(BOARD_PORT_LEDS, BOARD_PIN_LED_BOOTLOADER);
+// 		break;
+// 	}
+// }
 
-void
-led_toggle(unsigned led)
-{
-	switch (led) {
-	case LED_ACTIVITY:
-		gpio_toggle(BOARD_PORT_LEDS, BOARD_PIN_LED_ACTIVITY);
-		break;
+// void
+// led_toggle(unsigned led)
+// {
+// 	switch (led) {
+// 	case LED_ACTIVITY:
+// 		gpio_toggle(BOARD_PORT_LEDS, BOARD_PIN_LED_ACTIVITY);
+// 		break;
 
-	case LED_BOOTLOADER:
-		gpio_toggle(BOARD_PORT_LEDS, BOARD_PIN_LED_BOOTLOADER);
-		break;
-	}
-}
+// 	case LED_BOOTLOADER:
+// 		gpio_toggle(BOARD_PORT_LEDS, BOARD_PIN_LED_BOOTLOADER);
+// 		break;
+// 	}
+// }
 
 /* we should know this, but we don't */
 #ifndef SCB_CPACR

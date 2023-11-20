@@ -63,20 +63,20 @@ static void
 board_init(void)
 {
 	/* initialise LEDs */
-	rcc_peripheral_enable_clock(&BOARD_CLOCK_LEDS_REGISTER, BOARD_CLOCK_LEDS);
-	gpio_mode_setup(
-		BOARD_PORT_LEDS,
-		GPIO_MODE_OUTPUT,
-		GPIO_PUPD_NONE,
-		BOARD_PIN_LED_BOOTLOADER | BOARD_PIN_LED_ACTIVITY);
-	gpio_set_output_options(
-		BOARD_PORT_LEDS,
-		GPIO_OTYPE_PP,
-		GPIO_OSPEED_2MHZ,
-		BOARD_PIN_LED_BOOTLOADER | BOARD_PIN_LED_ACTIVITY);
-	BOARD_LED_ON(
-		BOARD_PORT_LEDS,
-		BOARD_PIN_LED_BOOTLOADER | BOARD_PIN_LED_ACTIVITY);
+	// rcc_peripheral_enable_clock(&BOARD_CLOCK_LEDS_REGISTER, BOARD_CLOCK_LEDS);
+	// gpio_mode_setup(
+	// 	BOARD_PORT_LEDS,
+	// 	GPIO_MODE_OUTPUT,
+	// 	GPIO_PUPD_NONE,
+	// 	BOARD_PIN_LED_BOOTLOADER | BOARD_PIN_LED_ACTIVITY);
+	// gpio_set_output_options(
+	// 	BOARD_PORT_LEDS,
+	// 	GPIO_OTYPE_PP,
+	// 	GPIO_OSPEED_2MHZ,
+	// 	BOARD_PIN_LED_BOOTLOADER | BOARD_PIN_LED_ACTIVITY);
+	// BOARD_LED_ON(
+	// 	BOARD_PORT_LEDS,
+	// 	BOARD_PIN_LED_BOOTLOADER | BOARD_PIN_LED_ACTIVITY);
 
 	/* if we have one, enable the force-bootloader pin */
 #ifdef BOARD_FORCE_BL_PIN
@@ -114,10 +114,10 @@ void
 board_deinit(void)
 {
 	/* deinitialise LEDs */
-	gpio_mode_setup(BOARD_PORT_LEDS,
-			GPIO_MODE_INPUT,
-			GPIO_PUPD_NONE,
-			BOARD_PIN_LED_BOOTLOADER | BOARD_PIN_LED_ACTIVITY);
+	// gpio_mode_setup(BOARD_PORT_LEDS,
+	// 		GPIO_MODE_INPUT,
+	// 		GPIO_PUPD_NONE,
+	// 		BOARD_PIN_LED_BOOTLOADER | BOARD_PIN_LED_ACTIVITY);
 
 	/* if we have one, disable the force-bootloader pin */
 #ifdef BOARD_FORCE_BL_PIN
