@@ -83,7 +83,7 @@
 # define BOARD_FLASH_SECTORS            ((_FLASH_KBYTES == 0x400) ? 11 : 23)
 # define BOARD_FLASH_SIZE               (_FLASH_KBYTES * 1024)
 
-# define OSC_FREQ                       8
+# define OSC_FREQ                       24
 
 // # define BOARD_PIN_LED_ACTIVITY         GPIO3
 // # define BOARD_PIN_LED_BOOTLOADER       GPIO11|GPIO1
