@@ -1268,29 +1268,29 @@ END GROUP
 OUTPUT(build/phi_bl/phi_bl.elf elf32-littlearm)
 LOAD linker stubs
 
-.debug_info     0x0000000000000000     0xabf5
+.debug_info     0x0000000000000000     0xabef
  .debug_info    0x0000000000000000     0x114c build/phi_bl/bl.o
  .debug_info    0x000000000000114c      0xdd2 build/phi_bl/stm32/cdcacm.o
  .debug_info    0x0000000000001f1e      0x296 build/phi_bl/stm32/usart.o
- .debug_info    0x00000000000021b4      0xd65 build/phi_bl/main_f4.o
- .debug_info    0x0000000000002f19      0x990 libopencm3/lib/libopencm3_stm32f4.a(rcc.o)
- .debug_info    0x00000000000038a9      0x20f libopencm3/lib/libopencm3_stm32f4.a(gpio_common_f0234.o)
- .debug_info    0x0000000000003ab8      0x514 libopencm3/lib/libopencm3_stm32f4.a(usart_common_all.o)
- .debug_info    0x0000000000003fcc      0x186 libopencm3/lib/libopencm3_stm32f4.a(usart_common_f124.o)
- .debug_info    0x0000000000004152      0x122 libopencm3/lib/libopencm3_stm32f4.a(flash_common_f234.o)
- .debug_info    0x0000000000004274      0x557 libopencm3/lib/libopencm3_stm32f4.a(flash_common_f24.o)
- .debug_info    0x00000000000047cb      0x900 libopencm3/lib/libopencm3_stm32f4.a(rcc_common_all.o)
- .debug_info    0x00000000000050cb      0xef4 libopencm3/lib/libopencm3_stm32f4.a(usb.o)
- .debug_info    0x0000000000005fbf     0x1628 libopencm3/lib/libopencm3_stm32f4.a(usb_standard.o)
- .debug_info    0x00000000000075e7     0x1027 libopencm3/lib/libopencm3_stm32f4.a(usb_control.o)
- .debug_info    0x000000000000860e      0xe96 libopencm3/lib/libopencm3_stm32f4.a(usb_f107.o)
- .debug_info    0x00000000000094a4      0x2e6 libopencm3/lib/libopencm3_stm32f4.a(vector.o)
- .debug_info    0x000000000000978a      0x268 libopencm3/lib/libopencm3_stm32f4.a(systick.o)
- .debug_info    0x00000000000099f2      0x22d libopencm3/lib/libopencm3_stm32f4.a(nvic.o)
- .debug_info    0x0000000000009c1f       0xbc libopencm3/lib/libopencm3_stm32f4.a(pwr.o)
- .debug_info    0x0000000000009cdb      0xece libopencm3/lib/libopencm3_stm32f4.a(usb_dwc_common.o)
- .debug_info    0x000000000000aba9       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg.a(lib_a-memcpy.o)
- .debug_info    0x000000000000abcf       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg.a(lib_a-strlen.o)
+ .debug_info    0x00000000000021b4      0xd5f build/phi_bl/main_f4.o
+ .debug_info    0x0000000000002f13      0x990 libopencm3/lib/libopencm3_stm32f4.a(rcc.o)
+ .debug_info    0x00000000000038a3      0x20f libopencm3/lib/libopencm3_stm32f4.a(gpio_common_f0234.o)
+ .debug_info    0x0000000000003ab2      0x514 libopencm3/lib/libopencm3_stm32f4.a(usart_common_all.o)
+ .debug_info    0x0000000000003fc6      0x186 libopencm3/lib/libopencm3_stm32f4.a(usart_common_f124.o)
+ .debug_info    0x000000000000414c      0x122 libopencm3/lib/libopencm3_stm32f4.a(flash_common_f234.o)
+ .debug_info    0x000000000000426e      0x557 libopencm3/lib/libopencm3_stm32f4.a(flash_common_f24.o)
+ .debug_info    0x00000000000047c5      0x900 libopencm3/lib/libopencm3_stm32f4.a(rcc_common_all.o)
+ .debug_info    0x00000000000050c5      0xef4 libopencm3/lib/libopencm3_stm32f4.a(usb.o)
+ .debug_info    0x0000000000005fb9     0x1628 libopencm3/lib/libopencm3_stm32f4.a(usb_standard.o)
+ .debug_info    0x00000000000075e1     0x1027 libopencm3/lib/libopencm3_stm32f4.a(usb_control.o)
+ .debug_info    0x0000000000008608      0xe96 libopencm3/lib/libopencm3_stm32f4.a(usb_f107.o)
+ .debug_info    0x000000000000949e      0x2e6 libopencm3/lib/libopencm3_stm32f4.a(vector.o)
+ .debug_info    0x0000000000009784      0x268 libopencm3/lib/libopencm3_stm32f4.a(systick.o)
+ .debug_info    0x00000000000099ec      0x22d libopencm3/lib/libopencm3_stm32f4.a(nvic.o)
+ .debug_info    0x0000000000009c19       0xbc libopencm3/lib/libopencm3_stm32f4.a(pwr.o)
+ .debug_info    0x0000000000009cd5      0xece libopencm3/lib/libopencm3_stm32f4.a(usb_dwc_common.o)
+ .debug_info    0x000000000000aba3       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg.a(lib_a-memcpy.o)
+ .debug_info    0x000000000000abc9       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg.a(lib_a-strlen.o)
 
 .debug_abbrev   0x0000000000000000     0x281d
  .debug_abbrev  0x0000000000000000      0x41f build/phi_bl/bl.o

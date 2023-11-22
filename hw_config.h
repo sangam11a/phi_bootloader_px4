@@ -92,14 +92,14 @@
 // # define BOARD_LED_ON                   gpio_clear
 // # define BOARD_LED_OFF                  gpio_set
 
-# define BOARD_USART                    USART1
+# define BOARD_USART                    UART4
 # define BOARD_USART_CLOCK_REGISTER     RCC_APB2ENR
 # define BOARD_USART_CLOCK_BIT          RCC_APB2ENR_USART1EN
 
-# define BOARD_PORT_USART               GPIOB
+# define BOARD_PORT_USART               GPIOA
 # define BOARD_PORT_USART_AF            GPIO_AF7
-# define BOARD_PIN_TX                   GPIO6
-# define BOARD_PIN_RX                   GPIO7
+# define BOARD_PIN_TX                   GPIO0
+# define BOARD_PIN_RX                   GPIO1
 # define BOARD_USART_PIN_CLOCK_REGISTER RCC_AHB1ENR
 # define BOARD_USART_PIN_CLOCK_BIT      RCC_AHB1ENR_IOPBEN
 # define SERIAL_BREAK_DETECT_DISABLED   1
