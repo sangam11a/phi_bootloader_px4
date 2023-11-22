@@ -677,7 +677,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp
 END GROUP
                 0x0000000008000000                . = ORIGIN (rom)
 
-.text           0x0000000008000000     0x27f8
+.text           0x0000000008000000     0x27f4
  *(.vectors)
  .vectors       0x0000000008000000      0x1ac libopencm3/lib/libopencm3_stm32f4.a(vector.o)
                 0x0000000008000000                vector_table
@@ -1174,58 +1174,57 @@ END GROUP
  *(.rodata*)
  .rodata        0x00000000080025dc        0x4 build/phi_bl/bl.o
  .rodata.str1.1
-                0x00000000080025e0       0x1e build/phi_bl/stm32/cdcacm.o
- *fill*         0x00000000080025fe        0x2 
- .rodata        0x0000000008002600       0xb2 build/phi_bl/stm32/cdcacm.o
+                0x00000000080025e0       0x1c build/phi_bl/stm32/cdcacm.o
+ .rodata        0x00000000080025fc       0xb2 build/phi_bl/stm32/cdcacm.o
  .rodata.str1.1
-                0x00000000080026b2       0x2a build/phi_bl/main_f4.o
- .rodata        0x00000000080026dc       0xe8 build/phi_bl/main_f4.o
-                0x00000000080027b0                silicon_revs
+                0x00000000080026ae       0x2a build/phi_bl/main_f4.o
+ .rodata        0x00000000080026d8       0xe8 build/phi_bl/main_f4.o
+                0x00000000080027ac                silicon_revs
  .rodata.stm32f107_usb_driver
-                0x00000000080027c4       0x34 libopencm3/lib/libopencm3_stm32f4.a(usb_f107.o)
-                0x00000000080027c4                stm32f107_usb_driver
-                0x00000000080027f8                . = ALIGN (0x4)
+                0x00000000080027c0       0x34 libopencm3/lib/libopencm3_stm32f4.a(usb_f107.o)
+                0x00000000080027c0                stm32f107_usb_driver
+                0x00000000080027f4                . = ALIGN (0x4)
 
-.glue_7         0x00000000080027f8        0x0
- .glue_7        0x00000000080027f8        0x0 linker stubs
+.glue_7         0x00000000080027f4        0x0
+ .glue_7        0x00000000080027f4        0x0 linker stubs
 
-.glue_7t        0x00000000080027f8        0x0
- .glue_7t       0x00000000080027f8        0x0 linker stubs
+.glue_7t        0x00000000080027f4        0x0
+ .glue_7t       0x00000000080027f4        0x0 linker stubs
 
-.vfp11_veneer   0x00000000080027f8        0x0
- .vfp11_veneer  0x00000000080027f8        0x0 linker stubs
+.vfp11_veneer   0x00000000080027f4        0x0
+ .vfp11_veneer  0x00000000080027f4        0x0 linker stubs
 
-.v4_bx          0x00000000080027f8        0x0
- .v4_bx         0x00000000080027f8        0x0 linker stubs
+.v4_bx          0x00000000080027f4        0x0
+ .v4_bx         0x00000000080027f4        0x0 linker stubs
 
-.iplt           0x00000000080027f8        0x0
- .iplt          0x00000000080027f8        0x0 build/phi_bl/bl.o
+.iplt           0x00000000080027f4        0x0
+ .iplt          0x00000000080027f4        0x0 build/phi_bl/bl.o
 
-.rel.dyn        0x00000000080027f8        0x0
- .rel.iplt      0x00000000080027f8        0x0 build/phi_bl/bl.o
+.rel.dyn        0x00000000080027f4        0x0
+ .rel.iplt      0x00000000080027f4        0x0 build/phi_bl/bl.o
 
-.preinit_array  0x00000000080027f8        0x0
-                0x00000000080027f8                . = ALIGN (0x4)
-                0x00000000080027f8                __preinit_array_start = .
+.preinit_array  0x00000000080027f4        0x0
+                0x00000000080027f4                . = ALIGN (0x4)
+                0x00000000080027f4                __preinit_array_start = .
  *(.preinit_array)
-                0x00000000080027f8                __preinit_array_end = .
+                0x00000000080027f4                __preinit_array_end = .
 
-.init_array     0x00000000080027f8        0x0
-                0x00000000080027f8                . = ALIGN (0x4)
-                0x00000000080027f8                __init_array_start = .
+.init_array     0x00000000080027f4        0x0
+                0x00000000080027f4                . = ALIGN (0x4)
+                0x00000000080027f4                __init_array_start = .
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array)
-                0x00000000080027f8                __init_array_end = .
+                0x00000000080027f4                __init_array_end = .
 
-.fini_array     0x00000000080027f8        0x0
-                0x00000000080027f8                . = ALIGN (0x4)
-                0x00000000080027f8                __fini_array_start = .
+.fini_array     0x00000000080027f4        0x0
+                0x00000000080027f4                . = ALIGN (0x4)
+                0x00000000080027f4                __fini_array_start = .
  *(.fini_array)
  *(SORT_BY_NAME(.fini_array.*))
-                0x00000000080027f8                __fini_array_end = .
+                0x00000000080027f4                __fini_array_end = .
                 0x0000000020000000                . = ORIGIN (ram)
 
-.data           0x0000000020000000       0x58 load address 0x00000000080027f8
+.data           0x0000000020000000       0x58 load address 0x00000000080027f4
                 0x0000000020000000                _data = .
  *(.data*)
  .data          0x0000000020000000        0xc build/phi_bl/stm32/cdcacm.o
@@ -1243,12 +1242,12 @@ END GROUP
                 0x0000000020000054                rcc_apb2_frequency
                 0x0000000020000058                . = ALIGN (0x4)
                 0x0000000020000058                _edata = .
-                0x00000000080027f8                _data_loadaddr = LOADADDR (.data)
+                0x00000000080027f4                _data_loadaddr = LOADADDR (.data)
 
-.igot.plt       0x0000000020000058        0x0 load address 0x0000000008002850
+.igot.plt       0x0000000020000058        0x0 load address 0x000000000800284c
  .igot.plt      0x0000000020000058        0x0 build/phi_bl/bl.o
 
-.bss            0x0000000020000058      0x7a0 load address 0x0000000008002850
+.bss            0x0000000020000058      0x7a0 load address 0x000000000800284c
                 0x0000000020000058                _sbss = .
  *(.bss*)
  .bss           0x0000000020000058      0x61c build/phi_bl/bl.o

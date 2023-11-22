@@ -72,13 +72,13 @@
 # define BOARD_USB_VBUS_SENSE_DISABLED
 # define INTERFACE_USB                  1
 # define INTERFACE_USART                1
-# define USBDEVICESTRING                "APN PHI BLSS v1"
+# define USBDEVICESTRING                "APN PHI BL v1"
 # define USBMFGSTRING                   "Antarikchya"
 // # define USBVENDORID                    0x0173
 # define USBPRODUCTID                   0x0012
 # define BOOT_DELAY_ADDRESS             0x000001a0
 
-# define BOARD_TYPE                     173
+# define BOARD_TYPE                     174
 # define _FLASH_KBYTES                  (*(uint16_t *)0x1fff7a22)
 # define BOARD_FLASH_SECTORS            ((_FLASH_KBYTES == 0x400) ? 11 : 23)
 # define BOARD_FLASH_SIZE               (_FLASH_KBYTES * 1024)
